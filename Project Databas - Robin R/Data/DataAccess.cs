@@ -71,6 +71,25 @@ namespace Project_Databas___Robin_R.Data
             Library library1 = new Library();
             library1.Name = "Robins Library";
 
+            Customer customer1 = new Customer();
+            customer1.FirstName = "Robin";
+            customer1.LastName = "Racho";
+            customer1.CardID = 991018;
+            customer1.CardPin = 1999;
+
+            Customer customer2 = new Customer();
+            customer2.FirstName = "Abdi";
+            customer2.LastName = "Farah";
+            customer2.CardID = 218491;
+            customer2.CardPin = 1824;
+
+            Customer customer3 = new Customer();
+            customer3.FirstName = "Lewis";
+            customer3.LastName = "Hamilton";
+            customer3.CardID = 886623;
+            customer3.CardPin = 7612;
+
+            
 
         }
     }
