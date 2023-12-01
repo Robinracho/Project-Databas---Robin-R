@@ -17,7 +17,7 @@ namespace Project_Databas___Robin_R.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"
-                Server=localhost;
+                Server=Localhost;
                 Database=NewtonLibrary Robin;
                 Trusted_Connection=True;
                 Trust Server Certificate=Yes;
