@@ -10,7 +10,7 @@ namespace Project_Databas___Robin_R.Models
     {
         public int BookId { get; set; }
         public string Title { get; set; }
-        public int ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public int Isbn { get; set; }
         public string Author { get; set; }
 
@@ -18,8 +18,13 @@ namespace Project_Databas___Robin_R.Models
 
         public bool IsRented { get; set; }
 
-        public int? DateOfLoan { get; set; }
-        public int? DateOfReturn { get; set; }
+        public DateTime? DateOfLoan { get; set; }
+        public DateTime? DateOfReturn { get; set; }
+
+        public int CustomerID { get; set; }
+        public Customer? Customer { get; set; }
+
+        public ICollection<Customer> Customers { get; set; } = new List<Customer>();
 
 
         public Book()

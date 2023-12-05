@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Project_Databas___Robin_R.Migrations
 {
     /// <inheritdoc />
-    public partial class intital : Migration
+    public partial class update : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,9 +33,7 @@ namespace Project_Databas___Robin_R.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IsRented = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfLoan = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfReturn = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,11 +46,14 @@ namespace Project_Databas___Robin_R.Migrations
                 {
                     BookId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BookTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReleaseDate = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Isbn = table.Column<int>(type: "int", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<int>(type: "int", nullable: false),
+                    IsRented = table.Column<bool>(type: "bit", nullable: false),
+                    DateOfLoan = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateOfReturn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LibraryID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

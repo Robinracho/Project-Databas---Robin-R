@@ -12,7 +12,7 @@ using Project_Databas___Robin_R.Data;
 namespace Project_Databas___Robin_R.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231201113415_update1")]
+    [Migration("20231205123928_update1")]
     partial class update1
     {
         /// <inheritdoc />
@@ -52,6 +52,15 @@ namespace Project_Databas___Robin_R.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateOfLoan")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfReturn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRented")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Isbn")
                         .HasColumnType("int");
 
@@ -61,8 +70,8 @@ namespace Project_Databas___Robin_R.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReleaseDate")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("ReleaseDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -110,14 +119,9 @@ namespace Project_Databas___Robin_R.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime>("DateOfLoan")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateOfReturn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsRented")
-                        .HasColumnType("bit");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

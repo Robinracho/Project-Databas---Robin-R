@@ -12,8 +12,8 @@ using Project_Databas___Robin_R.Data;
 namespace Project_Databas___Robin_R.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231201105815_intital")]
-    partial class intital
+    [Migration("20231205123543_update")]
+    partial class update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,9 +52,14 @@ namespace Project_Databas___Robin_R.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BookTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("DateOfLoan")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfReturn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRented")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Isbn")
                         .HasColumnType("int");
@@ -65,8 +70,12 @@ namespace Project_Databas___Robin_R.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReleaseDate")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookId");
 
@@ -110,15 +119,7 @@ namespace Project_Databas___Robin_R.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("DateOfLoan")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateOfReturn")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IsRented")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

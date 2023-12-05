@@ -15,7 +15,7 @@ namespace Project_Databas___Robin_R.Models
         public int CardID { get; set; }
 
         public int CardPin { get; set; }
-        public ICollection<Library> Libraries { get; set; } = new List<Library>();
+        public ICollection<Book> BooksBorrowed { get; set; } = new List<Book>();
         public Customer()
         {
             
