@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project_Databas___Robin_R.Models
 {
     internal class Customer
     {
-        public int CustomerId { get; set; }
+
+        public int CustomerID { get; set; } //Primary Key
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        public int CardID { get; set; }
-
+        public int? CardID { get; set; }
         public int CardPin { get; set; }
-        public ICollection<Book> BooksBorrowed { get; set; } = new List<Book>();
+
+        public ICollection<Loan> Loans { get; set; } = new List<Loan>();
+
+
         public Customer()
         {
-            
-        }
 
+        }
     }
 }
+        
