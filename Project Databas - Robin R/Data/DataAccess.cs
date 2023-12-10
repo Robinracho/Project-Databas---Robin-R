@@ -16,7 +16,7 @@ namespace Project_Databas___Robin_R.Data
             using (Context context = new Context())
             {
 
-                // Created Authors to use
+                //Authors Added
                 Author author1 = new Author { Name = "George Orwell" };
 
 
@@ -33,9 +33,7 @@ namespace Project_Databas___Robin_R.Data
 
 
 
-
-
-                // Created Costumer to use
+                //Costumers added
                 Customer customer1 = new Customer
                 {
                     FirstName = "Lewis",
@@ -104,20 +102,13 @@ namespace Project_Databas___Robin_R.Data
                 book5.IsRented = false;
 
 
-
-
-
-                //Add authors, books and customer to context
-
-                context.Authors.AddRange(author1, author2, author3, author4);
-                context.Books.AddRange(book1, book2, book3, book4);
+                context.Authors.AddRange(author1, author2, author3, author4, author5);
+                context.Books.AddRange(book1, book2, book3, book4, book5);
                 context.Customers.AddRange(customer1, customer2, customer3);
 
 
                 context.SaveChanges();
 
-
-                //Add loan for the books
 
                 Loan loan1 = new Loan { CustomerID = customer1.CustomerID, DateOfLoan = DateTime.Now, DateOfReturn = null };
                 Loan loan2 = new Loan { CustomerID = customer2.CustomerID, DateOfLoan = DateTime.Now, DateOfReturn = null };
@@ -225,9 +216,9 @@ namespace Project_Databas___Robin_R.Data
                         book.Loan = loanDetails;
                         book.IsRented = true;
 
+                        customer.Loans.Add(loanDetails);
                         context.Loans.Add(loanDetails);
 
-                        customer.Loans.Add(loanDetails);
 
                         context.SaveChanges();
 

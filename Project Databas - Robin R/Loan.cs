@@ -1,11 +1,10 @@
-﻿using Project_Databas___Robin_R.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Databas___Robin_R
+namespace Project_Databas___Robin_R.Models
 {
     internal class Loan
     {
@@ -28,4 +27,4 @@ namespace Project_Databas___Robin_R
     }
 }
    
-}
+

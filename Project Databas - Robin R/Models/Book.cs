@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project_Databas___Robin_R.Models
 {
-   
     internal class Book
     {
         [Key]
@@ -13,14 +13,10 @@ namespace Project_Databas___Robin_R.Models
         public ICollection<Author> Authors { get; set; } = new List<Author>();
         public int Isbn { get; set; } = new Random().Next(10000000, 999999999);
         public DateTime? ReleaseDate { get; set; }
-
         public int Rating { get; set; }
         public bool IsRented { get; set; }
 
         [ForeignKey("LoanID")]
-        public Loan? Rented { get; set; }
-
-
-
+        public Loan? Loan { get; set; }
     }
 }
